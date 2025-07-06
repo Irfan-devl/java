@@ -1,0 +1,25 @@
+class Main {
+    public static void main(String[] args) {
+        int ass=1;
+        int bass=1;
+        for(int i=1;i<=10;i++){
+            for(int j=0;j<(i+i-1);j++){
+                if(j%2!=0){
+                    System.out.print("* ");
+                    ass++;
+                }
+                else{
+                if(i%2!=0){
+                   System.out.print(bass+" ");
+                   ass=bass;
+                }
+                else{
+                    System.out.print(((ass)+i-j)+" ");
+                }
+                bass++;
+                }
+            }
+            System.out.println();
+        }
+    }
+}
