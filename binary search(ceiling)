@@ -20,9 +20,10 @@ class Main {
                 end=mid-1;
             }
             else{
-                return arr[mid];
+                return mid;
             }
         }
-        return arr[start];
+        //returning the index
+        return start;
     }
 }
