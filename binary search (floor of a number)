@@ -17,9 +17,10 @@ class Main {
                 end=mid-1;
             }
             else{
-                return arr[mid];
+                return mid;
             }
         }
-        return arr[end];
+        //returning the index
+        return end;
     }
 }
