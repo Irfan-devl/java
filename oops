@@ -1,0 +1,95 @@
+import java.util.*;
+class User{
+    private String name;
+    private String email;
+    private String user_id;
+    public User(String name,String email,String user_id){
+        this.name=name;
+        this.email=email;
+        this.user_id=user_id;
+    }
+    String namee(){
+        return name;
+    }
+    String emaili(){
+        return email;
+    }
+    String user_idi(){
+        return user_id;
+    }
+}
+class Instructor extends User{
+    private String expertise;
+    private String[] courses=new String[5];
+    int count=0;
+    public Instructor(String name,String email,String user_id,String expertise){
+        super(name,email,user_id);
+        this.expertise=expertise;
+    }
+    String expertisey(){
+        return expertise;
+    }
+    public void addcourse(String course){
+        if(count<courses.length){
+            courses[count]=course;
+            count++;
+        }
+        else{
+            System.out.println("first pendinga padi da deiiiii");
+        }
+    }
+    public void display(){
+        System.out.println("Name: "+namee());
+        System.out.println("Mail: "+emaili());
+        System.out.println("User_id: "+user_idi());
+        System.out.println("Expertise: "+expertisey());
+        System.out.println("Courses: ");
+        for(int i=0;i<courses.length;i++){
+            if(courses[i]==null){
+                break;
+            }
+            System.out.print(courses[i]+" ");
+        }
+        System.out.println();
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Your Name: ");
+        String name=sc.nextLine();
+        System.out.println("Your Mail id: ");
+        String email=sc.nextLine();
+        System.out.println("Your User id: ");
+        String user_id=sc.nextLine();
+        System.out.println("Your Expertise: ");
+        String expertise=sc.nextLine();
+        System.out.println("----------------------------------------------------");
+        System.out.println("----------------------------------------------------");
+        Instructor i=new Instructor(name,email,user_id,expertise);
+        for(int j=0;j<6;j++){
+            if(j==5){
+                System.out.println("Kuduthuruka coursesa olunga edhudah apro extra course add pannikalaam");
+                break;
+            }
+            System.out.println("if you want to add extra course: (Y/N)");
+            
+            String check=sc.next();
+            sc.nextLine();
+            if(check.equals("Y")){
+                System.out.println("Course Name: ");
+                String cn=sc.nextLine();
+                i.addcourse(cn);
+            }
+            else{
+                break;
+            }
+            System.out.println("----------------------------------------------------");
+        }
+        System.out.println("----------------------------------------------------");
+        System.out.println("----------------------------------------------------");
+        i.display();
+        System.out.println("----------------------------------------------------");
+        System.out.println("----------------------------------------------------");
+    }
+}
