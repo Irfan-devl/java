@@ -1,0 +1,24 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    static void is(int[] arr){
+        for(int i=0;i<arr.length-1;i++){
+            for(int j=i+1;j>0;j--){
+                if(arr[j-1]>arr[j]){
+                    int temp=arr[j-1];
+                    arr[j-1]=arr[j];
+                    arr[j]=temp;
+                }
+                else{
+                    break;
+                }
+            }
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr={7,-18,4,8,6,-9,-3,5};
+        is(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+}
