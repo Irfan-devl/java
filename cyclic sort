@@ -1,0 +1,27 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    static void cs(int[] arr){
+        int i=0;
+        while(i<arr.length){
+            int c=arr[i]-1;
+            if(arr[i]!=arr[c]){
+                swap(arr,i,c);
+            }
+            else{
+                i++;
+            }
+        }
+    }
+    static void swap(int[] arr,int i,int c){
+        int temp=arr[i];
+        arr[i]=arr[c];
+        arr[c]=temp;
+    }
+    public static void main(String[] args) {
+        int[] arr={4,5,2,1,3};
+        cs(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+}
