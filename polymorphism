@@ -1,0 +1,65 @@
+class Animal{
+    void breathe(){
+        System.out.println("It is Breathing");
+    }
+    void eat(){
+        System.out.println("It eats food");
+    }
+    void foodhabbit(){
+        System.out.println("It is herbi/carni/omni");
+    }
+}
+class Panda extends Animal{
+    void eat(){
+        System.out.println("Panda eats veg");
+    }
+    void foodhabbit(){
+        System.out.println("Panda is herbi");
+    }
+}
+class Cheetah extends Animal{
+    void eat(){
+        System.out.println("Cheetah eats nonveg");
+    }
+    void foodhabbit(){
+        System.out.println("Cheetah is carni");
+    }
+    void color(){
+        System.out.println("Cheetah is yellow color");
+    }
+}
+class Honeybadger extends Animal{
+    void eat(){
+        System.out.println("Honey Badger eats both veg and non veg");
+    }
+    void foodhabbit(){
+        System.out.println("Honey Badger is omni");
+    }
+}
+class Zoo{
+    void zoo(Animal a){
+        a.breathe();
+        a.eat();
+        a.foodhabbit();
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Panda p=new Panda();
+        Cheetah c=new Cheetah();
+        Honeybadger h=new Honeybadger();
+        Animal a;
+        a=c;
+        Zoo z=new Zoo();
+        z.zoo(p);
+        System.out.println("-----------------------------------------");
+        System.out.println("-----------------------------------------");
+        z.zoo(c);
+        ((Cheetah)(a)).color();
+        System.out.println("-----------------------------------------");
+        System.out.println("-----------------------------------------");
+        z.zoo(h);
+        System.out.println("-----------------------------------------");
+        System.out.println("-----------------------------------------");
+    }
+}
