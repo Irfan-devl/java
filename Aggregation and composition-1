@@ -1,0 +1,47 @@
+class Engine{
+    private int power;
+    private int capacity;
+    
+    int getpo(int power){
+        this.power=power;
+        return power;
+    }
+    int getcap(int caapcity){
+        this.capacity=capacity;
+        return capacity;
+    }
+}
+class Bike{
+    Engine en=new Engine();
+    private String brand;
+    private String name;
+    private int price;
+    Bike(String brand,String name,int price){
+        this.brand=brand;
+        this.name=name;
+        this.price=price;
+    }
+    String getname(){
+        return name;
+    }
+    String getbrand(){
+        return brand;
+    }
+    int getprice(){
+        return price;
+    }
+}
+class Person{
+    private String name;
+    void getbike(String name,Bike b){
+        this.name=name;
+        System.out.println("The owner of the bike is "+name+". he has "+b.getbrand()+" "+b.getname()+" which is cost around "+b.getprice()+" rupees. the engine capacity is "+b.en.getcap(1103)+"cc and it's power is "+b.en.getpo(216)+"bhp");
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Bike key=new Bike("Ducati","Panigale V4",3000000);
+        Person max=new Person();
+        max.getbike("max",key);
+    }
+}
