@@ -1,0 +1,46 @@
+class Movie{
+    private String name;
+    private String genre;
+    private String actor;
+    String getname(String name){
+        this.name=name;
+        return name;
+    }
+    String getgenre(String genre){
+        this.genre=genre;
+        return genre;
+    }
+    String getactor(String actor){
+        this.actor=actor;
+        return actor;
+    }
+}
+class Director{
+    Movie m=new Movie();
+    private String name;
+    private int salary;
+    Director(String name,int salary){
+        this.name=name;
+        this.salary=salary;
+    }
+    String getname(){
+        return name;
+    }
+    int getsalary(){
+        return salary;
+    }
+}
+class Producer{
+    private String name;
+    void getdirector(String name,Director d){
+        this.name=name;
+        System.out.println("The Director "+d.getname()+" has teamed up with actor "+d.m.getactor("Vijay")+" for their latest action thriller movie titled as "+d.m.getname("LEO")+"and produced by "+name+", For this high-profile collaboration, "+d.getname()+" reportedly received a salary of "+d.getsalary()+" crore");
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Director d=new Director("loki",50);
+        Producer p=new Producer();
+        p.getdirector("Seven Screen Studio",d);
+    }
+}
