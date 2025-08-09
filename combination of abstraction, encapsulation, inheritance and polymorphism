@@ -1,0 +1,65 @@
+abstract class Armmovie{
+    String basic;
+    protected String actor;
+    protected String actress;
+    protected String musicdirector;
+    abstract void actor();
+    abstract void actress();
+    abstract void musicdirector();
+    String out(){
+        basic="Actor "+actor+" is the protagonist and Actress "+actress+" is the heroine. The music is composed by "+musicdirector;
+        return basic;
+    }
+}
+class Sarkar extends Armmovie{
+    void actor(){
+        actor="vijay";
+    }
+    void actress(){
+        actress="Keerty";
+    }
+    void musicdirector(){
+        musicdirector="A R Rahman";
+    }
+}
+class Thuppaki extends Armmovie{
+    void actor(){
+        actor="vijay";
+    }
+    void actress(){
+        actress="Kajol";
+    }
+    void musicdirector(){
+        musicdirector="Harris jayaraj";
+    }
+}
+class Spyder extends Armmovie{
+    void actor(){
+        actor="Mahesh Babu";
+    }
+    void actress(){
+        actress="Rakul";
+    }
+    void musicdirector(){
+        musicdirector="Harris Jayaraj";
+    }
+}
+class Soln{
+    void soln(Armmovie a){
+        a.actor();
+        a.actress();
+        a.musicdirector();
+        System.out.println(a.out());
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Sarkar s=new Sarkar();
+        Thuppaki t=new Thuppaki();
+        Spyder sp=new Spyder();
+        Soln soln=new Soln();
+        soln.soln(s);
+        soln.soln(t);
+        soln.soln(sp);
+    }
+}
