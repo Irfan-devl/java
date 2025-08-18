@@ -1,0 +1,58 @@
+interface movie{
+    void actor();
+    void actress();
+    void md();
+}
+class leo implements movie{
+    public void actor(){
+        System.out.println("Vijay");
+    }
+    public void actress(){
+        System.out.println("Trisha");
+    }
+    public void md(){
+        System.out.println("Anirudh");
+    }
+}
+class retro implements movie{
+    public void actor(){
+        System.out.println("suriya");
+    }
+    public void actress(){
+        System.out.println("pooja");
+    }
+    public void md(){
+        System.out.println("sana");
+    }
+}
+class doctor implements movie{
+    public void actor(){
+        System.out.println("sk");
+    }
+    public void actress(){
+        System.out.println("priyankamohan");
+    }
+    public void md(){
+        System.out.println("Anirudh");
+    }
+}
+class cinema{
+    void poly(movie m){
+        m.actor();
+        m.actress();
+        m.md();
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        leo l=new leo();
+        retro r=new retro();
+        doctor d=new doctor();
+        cinema c=new cinema();
+        c.poly(l);
+        System.out.println("----------------------------");
+        c.poly(r);
+        System.out.println("----------------------------");
+        c.poly(d);
+    }
+}
