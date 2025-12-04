@@ -1,0 +1,61 @@
+import java.util.*;
+class Invaliduser extends Exception{
+    public String getMessage(){
+        return "card details is wrong";
+    }
+}
+class ATM{
+    private int acc=1234;
+    private int pass=777;
+    int a,p;
+    Scanner sc=new Scanner(System.in);
+    void input(){
+        System.out.println("welcome to the bank");
+        System.out.println("enter your account no:");
+        a=sc.nextInt();
+        System.out.println("enter your password:");
+        p=sc.nextInt();
+    }
+    void verify() throws Invaliduser{
+        if(a==acc && p==pass){
+            System.out.println("You take your amount");
+            System.out.println("thanks for visiting our bank");
+        }
+        else{
+            Invaliduser iu=new Invaliduser();
+            System.out.println(iu.getMessage());
+            throw iu;
+        }
+    }
+}
+class CUB{
+    void initiate(){
+        ATM atm=new ATM();
+        try{
+            atm.input();
+            atm.verify();
+        }
+        catch(Invaliduser e){
+            try{
+            atm.input();
+            atm.verify();
+            }
+            catch(Invaliduser c){
+                try{
+                    atm.input();
+                    atm.verify();
+                }
+                catch(Invaliduser d){
+                    System.out.println("your card has blocked. contact your nearest branch");
+                    System.exit(0);
+                }
+            }
+        }
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        CUB cub=new CUB();
+        cub.initiate();
+    }
+}
