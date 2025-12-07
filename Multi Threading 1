@@ -1,0 +1,34 @@
+class NUM extends Thread{
+    public void run(){
+        for(int i=1;i<=10;i++){
+            System.out.println(i);
+            try{
+                Thread.sleep(4000);
+            }
+            catch(InterruptedException e){
+                
+            }
+        }
+    }
+}
+class Al extends Thread{
+    public void run(){
+        for(char i='A';i<='z';i++){
+            System.out.println(i);
+            try{
+                Thread.sleep(4000);
+            }
+            catch(InterruptedException e){
+                
+            }
+        }
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        NUM n=new NUM();
+        Al a=new Al();
+        n.start();
+        a.start();
+    }
+}
