@@ -1,0 +1,36 @@
+class NUM implements Runnable {
+    public void run(){
+        for(int i=1;i<=10;i++){
+            System.out.println(i);
+            try{
+                Thread.sleep(4000);
+            }
+            catch(InterruptedException e){
+                
+            }
+        }
+    }
+}
+class Al implements Runnable{
+    public void run(){
+        for(char i='A';i<='z';i++){
+            System.out.println(i);
+            try{
+                Thread.sleep(4000);
+            }
+            catch(InterruptedException e){
+                
+            }
+        }
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        NUM n=new NUM();
+        Al a=new Al();
+        Thread t1=new Thread(n);
+        Thread t2=new Thread(a);
+        t1.start();
+        t2.start();
+    }
+}
