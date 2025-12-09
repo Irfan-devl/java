@@ -1,0 +1,20 @@
+class ON{
+    private static ON o;
+    public static ON getInstance(){
+        if(o==null){
+            o=new ON();
+            return o;
+        }
+        else{
+            return o;
+        }
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        ON o=ON.getInstance();
+        ON o2=ON.getInstance();
+        ON o1=ON.getInstance();
+        System.out.println(o==o2);
+    }
+}
