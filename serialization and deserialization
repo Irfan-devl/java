@@ -1,0 +1,61 @@
+/**
+ * 
+ */
+package project1;
+import java.sql.*;
+import java.util.*;
+import java.io.*;
+
+class Customer implements Serializable{
+	private String name;
+	private String product;
+	Customer(String name,String product){
+		this.name=name;
+		this.product=product;
+	}
+	String getname() {
+		return name;
+	}
+	String getpro() {
+		return product;
+	}
+}
+public class Project1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Customer c=new Customer("Irfan","wand");
+		try {
+			//serialization
+			String path="I:\\studies\\new.txt";
+			FileOutputStream f=new FileOutputStream(path);
+			ObjectOutputStream o=new ObjectOutputStream(f);
+			o.writeObject(c);
+			o.flush();
+			System.out.println("hj");
+			//deserialization
+			Customer c1=null;
+			FileInputStream inf=new FileInputStream(path);
+			ObjectInputStream io=new ObjectInputStream(inf);
+			c1=(Customer)io.readObject();
+			System.out.print(c1.getname()+" "+c1.getpro());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		String url="jdbc:mysql://localhost:3306/got";
+//		String un="root";
+//		String pwd="dracarys";
+//		try {
+//			Connection con=DriverManager.getConnection(url,un,pwd);
+//			System.out.println("loaded");
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			System.out.println("wrong");
+//		}
+
+	}
+
+}
